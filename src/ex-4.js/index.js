@@ -1,29 +1,11 @@
-function choosenumber() {
+// Escribe un programa que pida dos números y escriba “La suma de
+// <numero-uno> con <numero-dos> es <resultado>”.
 
 let num1 = parseFloat(prompt("Por favor, escriba el primer número:"));
 let num2 = parseFloat(prompt("Por favor, escriba el segundo número:"));
 
-let mayor;
+let resultado = num1 + num2;
 
-if (num1 > num2) {
-    mayor = num1;
-} else if (num2 > num1) {
-    mayor = num2;
-} else {
+console.log(`La suma de ${num1} con ${num2} es ${resultado}`);
 
- document.querySelector('h3').textContent = "Los números son iguales.";
- 
-
-
-}
-if (mayor !== undefined) {
-    
-document.querySelector('h3').textContent = `El mayor de los dos números es: ${mayor}`;
-}
-}
-
-
-
-window.onload = choosenumber;
-
-    
+document.getElementById('resultado').textContent = `La suma de ${num1} con ${num2} es ${resultado}`;

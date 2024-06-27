@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 3em;
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    text-shadow: 2px 2px 4px rgba(105, 44, 44, 0.3);
+    animation: fadeIn 2s ease-in-out;
+    background-clip: content-box;
+}
