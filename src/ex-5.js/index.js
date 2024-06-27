@@ -1,7 +1,13 @@
+// Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.
+
+// Solicitar al usuario que ingrese los dos números
+// Variable para almacenar el número mayor
+// Comparar los números para determinar cuál es mayor
+// Salir de la función si los números son iguales
+// Mostrar el número mayor en el elemento <h3> del HTML
+
+
 function choosenumber() {
-    // Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.
-
-
     let num1 = parseFloat(prompt("Por favor, escriba el primer número:"));
     let num2 = parseFloat(prompt("Por favor, escriba el segundo número:"));
     
@@ -12,18 +18,11 @@ function choosenumber() {
     } else if (num2 > num1) {
         mayor = num2;
     } else {
-    
-     document.querySelector('h3').textContent = "Los números son iguales.";
-     
-    
-    
-    }
-    if (mayor !== undefined) {
-        
-        document.body.innerHTML = ('h3').textContent = `El mayor de los dos números es: ${mayor}`;
-    }
+        document.querySelector('h3').textContent = "Los números son iguales.";
+        return; // Salir de la función si los números son iguales
     }
     
-    
-    
-    window.onload = choosenumber;
+    document.querySelector('h3').textContent = `El mayor de los dos números es: ${mayor}`;
+}
+
+window.onload = choosenumber;
