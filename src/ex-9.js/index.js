@@ -1,52 +1,38 @@
-// Escribe un programa que pida una frase y escriba cuantas vocales hay en la frase.
+// Escribe un programa que pida una frase y escriba cuantas vocales hay en la frase
 
-// Verifica si un carácter dado es una vocal
-// llevar el conteo de las apariciones de cada vocal
-// Solicita al usuario que ingrese una frase
-// obtener el conteo de cada vocal en la frase.
+// Función para contar vocales en una frase
+// Convertir a minúsculas para comparación consistente
+// Solicitar al usuario que ingrese una frase
+// Contar las vocales en la frase ingresada
 
 function isVowel(character) {
     return 'aeiouAEIOU'.includes(character);
 }
 
+
 function countVowels(sentence) {
-    let vowelCount = {
-        'a': 0,
-        'e': 0,
-        'i': 0,
-        'o': 0,
-        'u': 0
-    };
-
-    let lowercaseSentence = sentence.toLowerCase();
-
-    for (let i = 0; i < lowercaseSentence.length; i++) {
-        let char = lowercaseSentence[i];
+    let counter = 0;
+    let lowerCaseSentence = sentence.toLowerCase(); 
+    
+    for (let i = 0; i < lowerCaseSentence.length; i++) {
+        let char = lowerCaseSentence[i];
         if (isVowel(char)) {
-            vowelCount[char]++;
+            counter++;
         }
     }
-
-    return vowelCount;
+    
+    return counter;
 }
+
 
 let sentence = prompt("Por favor, ingresa una frase:");
 
-let results = countVowels(sentence);
 
-console.log(`En la frase "${sentence}" las vocales aparecen de la siguiente manera:`);
-console.log(`- Vowel 'a': ${results['a']} times`);
-console.log(`- Vowel 'e': ${results['e']} times`);
-console.log(`- Vowel 'i': ${results['i']} times`);
-console.log(`- Vowel 'o': ${results['o']} times`);
-console.log(`- Vowel 'u': ${results['u']} times`);
+let vowelCount = countVowels(sentence);
 
 
-let output = `<p>En la frase "${sentence}" las vocales aparecen de la siguiente manera:<br>`;
-output += `- Vowel 'a': ${results['a']} times<br>`;
-output += `- Vowel 'e': ${results['e']} times<br>`;
-output += `- Vowel 'i': ${results['i']} times<br>`;
-output += `- Vowel 'o': ${results['o']} times<br>`;
-output += `- Vowel 'u': ${results['u']} times</p>`;
+console.log(`En la frase "${sentence}" hay ${vowelCount} vocales.`);
 
-document.body.innerHTML = output;
+
+let resultElement = document.getElementById('vowelCount');
+resultElement.textContent = `En la frase "${sentence}" hay ${vowelCount} vocales.`;
