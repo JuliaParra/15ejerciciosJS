@@ -1,8 +1,13 @@
+// Escribe un programa que pida una frase y escriba las vocales que aparecen
+
+// Función para obtener las vocales únicas de una frase
+// Solicitar al usuario que ingrese una frase
+
 function isVowel(character) {
     return 'aeiouAEIOU'.includes(character);
 }
 
-// Function to obtain unique vowels from a sentence
+
 function getVowels(sentence) {
     let foundVowels = [];
     for (let i = 0; i < sentence.length; i++) {
@@ -14,13 +19,13 @@ function getVowels(sentence) {
     return foundVowels;
 }
 
-// Prompt the user to enter a sentence
+
 let sentence = prompt("Please enter a sentence:");
 
-// Obtain the vowels from the sentence
+
 let vowels = getVowels(sentence);
 
-// Display results in the console
+
 if (vowels.length > 0) {
     console.log("Las vocales que aparecen en la frase son:");
     console.log(vowels.join(", "));
@@ -28,9 +33,10 @@ if (vowels.length > 0) {
     console.log("No se encontraron vocales en la frase.");
 }
 
-// Display results on the screen
+
+let resultContainer = document.getElementById('result-container');
 if (vowels.length > 0) {
-    document.body.innerHTML = `<h1>Las vocales que aparecen en la frase son: ${vocales.join(", ")}</h1>`;
+    resultContainer.innerHTML = `<p>Las vocales que aparecen en la frase son: ${vowels.join(", ")}</p>`;
 } else {
-    document.body.innerHTML = `<h2>No se encontraron vocales en la frase.</h2>`;
+    resultContainer.innerHTML = `<p>No se encontraron vocales en la frase.</p>`;
 }

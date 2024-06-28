@@ -1,9 +1,10 @@
 // Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible)
 
-function esDivisiblePorDosTresCincoSiete(numero) {
-    let divisores = []; // Array para almacenar los divisores encontrados
+// Verificar divisibilidad por 2, 3, 5 o 7 y añadir al array divisores
 
-    // Verificar divisibilidad por 2, 3, 5 o 7 y añadir al array divisores
+function esDivisiblePorDosTresCincoSiete(numero) {
+    let divisores = []; 
+    
     if (numero % 2 === 0) {
         divisores.push(2);
     }
@@ -17,7 +18,7 @@ function esDivisiblePorDosTresCincoSiete(numero) {
         divisores.push(7);
     }
 
-    // Si el array de divisores tiene elementos, retorna true y muestra los divisores
+    
     if (divisores.length > 0) {
         console.log(`El número ${numero} es divisible por: ${divisores.join(', ')}.`);
         let resultadoElement = document.getElementById('resultado');
